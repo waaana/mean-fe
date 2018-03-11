@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { MyFormComponent } from './my-form/my-form.component';
+import { MyFormComponent } from './components/my-form/my-form.component';
 
 
 @NgModule({
