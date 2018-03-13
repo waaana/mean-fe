@@ -1,0 +1,15 @@
+<form #eventForm="ngForm">
+  <div class="form-group">
+    <label for="formGroupInput" class="form-control-label">Group</label>
+    <input type="text" class="form-control" id="formGroupInput" placeholder="Insert group name" name="group" [(ngModel)]="event.group"
+           required minlength="5" maxlength="140" [disabled]="!isCreate">
+  </div>
+  <div class="form-group">
+    <label for="formDescInput">Description</label>
+    <textarea type="text" class="form-control" id="formDescInput" rows="6" placeholder="Insert group description" 
+          name="description" [(ngModel)]="event.description"></textarea>
+  </div>
+  <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+  <button type="button" *ngIf="isCreate" class="btn btn-primary" (click)="create()" [disabled]="!eventForm.form.valid">Create</button>
+  <button type="button" *ngIf="!isCreate" class="btn btn-primary" (click)="edit()" [disabled]="!eventForm.form.valid">Edit</button>
+</form>

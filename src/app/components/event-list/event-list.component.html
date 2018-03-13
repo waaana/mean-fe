@@ -1,0 +1,16 @@
+<button type="button" class="btn btn-primary" (click)="create()" >Create</button>
+
+<section class="row" *ngFor="let event of events; let i = index;">
+    <div class="col col-sm-12">
+      <div class="card">
+        <div class="card-header">
+            <i class="pull-left fa fa-trash cursor-click" (click)="deleteEvent(event)"></i>
+            <i class="pull-left fa fa-edit cursor-click" (click)="openEvent(event._id)"></i>
+          <small class="pull-left">Events - {{event.group}}</small>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [innerHTML]=event.description></p>
+        </div>
+      </div>
+    </div>
+  </section>
