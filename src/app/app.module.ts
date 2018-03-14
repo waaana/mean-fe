@@ -15,6 +15,7 @@ import { EventListComponent } from './components/event-list/event-list.component
 import { EventEditComponent } from './components/event-edit/event-edit.component';
 import { Page404Component } from './components/page-404/page-404.component';
 import { HomeComponent } from './components/home/home.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HomeComponent } from './components/home/home.component';
     EventListComponent,
     EventEditComponent,
     Page404Component,
-    HomeComponent
+    HomeComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,

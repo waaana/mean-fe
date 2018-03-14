@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
+  errorMessage: any;
   events = [];
   retreiveData = false;
   paginator: IPaginator = new IPaginator(
@@ -37,6 +38,7 @@ export class EventListComponent implements OnInit {
         }
       })
       .catch((reason) => {
+        this.displayError(reason);
         this.retreiveData = false;
       });
   }
@@ -55,12 +57,17 @@ export class EventListComponent implements OnInit {
         }
       })
       .catch((reason) => {
+        this.displayError(reason);
         this.retreiveData = false;
       });
   }
 
   create() {
     this.openEvent('new');
+  }
+
+  displayError(reason: any) {
+    this.errorMessage = reason && reason.error ? reason.error.err : 'Unexpected error appeared';
   }
 
 }

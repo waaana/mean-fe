@@ -3,6 +3,7 @@ export class IEventRequest {
 }
 
 export class IEventSchema {
+    _id: string;
     group: string;
     description: string;
 }
