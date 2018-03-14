@@ -52,8 +52,8 @@ export class EventService {
       })
   }
 
-  deleteEvent = (eventData: IEventSchema, paginator: IPaginator): Promise<IEventResponse> => {
-    return this.httpClient.post(`${environment.serverPath}${this.eventPath}/delete`, { eventData, paginator })
+  deleteEvent = (eventData: IEventSchema, paginated: IPaginator): Promise<IEventResponse> => {
+    return this.httpClient.post(`${environment.serverPath}${this.eventPath}/delete`, { eventData, paginated })
       .toPromise()
       .then(parseResponsePaginated)
       .catch((reason) => {
